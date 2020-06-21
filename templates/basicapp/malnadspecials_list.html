@@ -1,0 +1,174 @@
+{%extends 'html/base.html'%}
+{%load static%}
+
+{% block body_block%}
+
+<div class="box">
+  {%for special in malnadspecials%}
+  <h1>{{special.rank}} : {{special.name}}</h1>
+  <div  class="card 2">
+    <div class="card_image">
+      <img style="width:60vw;height:40vw;" src="{{special.thumbnail.url}}" alt="">
+
+     </div>
+
+  </div>
+  <h5 style="padding:40px;font-family: 'Itim',cursive;">{{special.desc}}</h5>
+
+  <div style="padding:20px;margin:20px;margin-bottom:20vw;" id="map">
+    <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
+<iframe style="align:center;margin:40px;" src="{{special.google_map_html}}" width="80%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<a style="text-align:center;" href="{{special.google_map_link}}" class="style-1">Go to Google Map</a>
+</div>
+<div style="width:100%;height:450px;text-align:center;" class="d-none d-md-block cus  mb-3">
+<div  class="container">
+  <iframe class="container" src="{{special.google_map_html}}" width="900" height="600vw" frameborder="0" style="align:center;padding-left:5vw;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <a href="{{special.google_map_link}}" class="style-1">Go to Google Map</a>
+
+</div>
+
+
+
+</div>
+
+
+  </div>
+
+  <div class="alll">
+
+    <div id="leftie">
+      <a href="#" class="style-1">COntact Us for booking</a>
+    </div>
+
+    <div id="rightie">
+      <a href="{% url 'basicapp:home_view'%}" class="style-1"> Go to home page</a>
+
+    </div>
+
+  </div>
+
+
+
+{%endfor%}
+</div>
+
+
+
+
+<style media="screen">
+.alll{
+  width:100%;
+  padding:20px;
+}
+#leftie{
+  float:right;
+}
+#rightie{
+  float:left;
+}
+
+.box{
+  margin:80px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  padding:40px;
+}
+.cards-list {
+z-index: 0;
+width: 100%;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+.card {
+margin: 30px auto;
+width: 60vw;
+height: inherit;
+border-radius: 10px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+cursor: pointer;
+background-color: black;
+transition: 0.4s;
+}
+
+.card .card_image {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+}
+
+.card .card_image img {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+object-fit: cover;
+}
+
+.card .card_title {
+text-align: center;
+border-radius: 0px 0px 40px 40px;
+
+font-weight: bold;
+font-size: 30px;
+margin-top: -80px;
+height: 40px;
+}
+
+.card:hover {
+transform: scale(0.9, 0.9);
+box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+-5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+color: white;
+}
+
+.title-black {
+color: black;
+}
+
+@media all and (max-width: 500px) {
+.card-list {
+/* On small screens, we are no longer using row direction but column */
+flex-direction: column;
+}
+}
+.loop{
+  width:100%;
+
+}
+#left{
+  float:left;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+#left:hover {
+transform: scale(0.9, 0.9);
+box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+-5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+#right{
+  float:right;
+}
+.style-1 {
+  border:3px solid white;
+  color:white;
+
+  text-transform:uppercase;
+  padding:10px;
+  font-weight:600;
+  max-width:250px;
+  display:block;
+  text-align:center;
+  margin:10px auto;
+  position:relative;
+}
+.style-1:hover {
+  background:#000;
+  border-color:white;
+  color:#fff;
+}
+</style>
+{%endblock%}
