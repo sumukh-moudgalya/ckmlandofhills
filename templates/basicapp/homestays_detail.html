@@ -3,77 +3,124 @@
 
 
 {%block body_block%}
-<div class="box">
-  <h1 style="text-align:center;font-size:8vw;">{{homestay_detail.name}}</h1>
+<div class="d-none d-md-block">
+  <div class="box">
+    <h1 style="text-align:center;font-size:8vw;">{{homestay_detail.name}}</h1>
 
-  <div  class="card 2">
+    <div  class="card 2">
+      <div class="card_image">
+        <img style="width:80vw;" src="{{homestay_detail.thumbnail.url}}" alt="">
+
+
+       </div>
+
+
+    </div>
+    <h4 style="padding:30px;">{{homestay_detail.desc}}</h4>
+    <h3 class="style-2" style="text-align:center;">Price Range:{{homestay_detail.price_range}}</h3>
+
+    <div style="padding:20px;margin:20px;margin-bottom:20vw;" id="map">
+      <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
+  <iframe style="align:center;margin:40px;" src="{{homestay_detail.google_map_html}}" width="80%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <a style="text-align:center;" href="{{hoomestay_detail.google_map_link}}" class="style-1">Go to Google Map</a>
+  </div>
+  <div style="width:100%;height:450px;text-align:center;" class="d-none d-md-block cus  mb-3">
+  <div  class="container">
+    <iframe class="container" src="{{homestay_detail.google_map_html}}" width="900" height="600vw" frameborder="0" style="align:center;padding-left:5vw;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <a href="{{homestay_detail.google_map_link}}" class="style-1">Go to Google Map</a>
+
+  </div>
+
+
+
+  </div>
+
+
+    </div>
+    <div style="padding-bottom:18vw;margin:left:20px;" class="loop">
+      <div id="left">
+
+    <a href="{{homestay_detail.google_map_link}}" class="style-1">{{homestay_detail.google_rating}} <span class="fa fa-star checked"></span></a>
+
+      </div>
+      <div id="middle">
+        <p>hi</p>
+
+      </div>
+      <div id="right">
+        <a href="{{homestay_detail.google_map_link}}" class="style-1">Book Now</a>
+
+
+
+
+      </div>
+
+  </div>
+
+  </div>
+</div>
+
+<div class="d-md-none d-sm-block">
+  <div class="heading">
+    <h1 style="text-align:center;font-size:9vw;padding-top:12vw;">{{homestay_detail.name}}</h1>
+
+  </div>
+  <div style="width:90vw" class="card 2">
     <div class="card_image">
-      <img style="width:80vw;" src="{{homestay_detail.thumbnail.url}}" alt="">
+      <img style="width:90vw;" src="{{homestay_detail.thumbnail.url}}" alt="oops..image not found">
+
+     </div>
+    </div>
+     <div style="padding-top:5vw;padding:1vw;font-size:6vw" class="descp">
+       <h4 style="font-size:5vw">{{homestay_detail.desc}}</h4>
+       <h3 class="style-2" style="text-align:center;font-size:5vw">Price Range:{{homestay_detail.price_range}}</h3>
 
 
      </div>
+     <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
+ <iframe style="align:center;margin:40px;" src="{{homestay_detail.google_map_html}}" width="80%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+ <a style="text-align:center;" href="{{hoomestay_detail.google_map_link}}" class="style-1">Go to Google Map</a>
+ </div>
+
+ <div style="margin-bottom:12vw;padding:2vw;" class="loop">
+ <div style="padding:1vw;" id="left">
+  <a href="{{homestay_detail.google_map_link}}" class="style-2">{{homestay_detail.google_rating}} <span class="fa fa-star checked"></span></a>
 
 
-  </div>
-  <h4 style="padding:30px;">{{homestay_detail.desc}}</h4>
-  <h3 class="style-2" style="text-align:center;">Price Range:{{homestay_detail.price_range}}</h3>
+ </div>
+ <div id="right">
+<a href="{{homestay_detail.google_map_link}}" class="style-2">Book Now</a>
 
-  <div style="padding:20px;margin:20px;margin-bottom:20vw;" id="map">
-    <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
-<iframe style="align:center;margin:40px;" src="{{homestay_detail.google_map_html}}" width="80%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-<a style="text-align:center;" href="{{hoomestay_detail.google_map_link}}" class="style-1">Go to Google Map</a>
-</div>
-<div style="width:100%;height:450px;text-align:center;" class="d-none d-md-block cus  mb-3">
-<div  class="container">
-  <iframe class="container" src="{{homestay_detail.google_map_html}}" width="900" height="600vw" frameborder="0" style="align:center;padding-left:5vw;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-  <a href="{{homestay_detail.google_map_link}}" class="style-1">Go to Google Map</a>
-
-</div>
-
-
-
-</div>
-
-
-  </div>
-  <div style="padding-bottom:18vw;margin:left:20px;" class="loop">
-    <div id="left">
-
-  <a href="{{homestay_detail.google_map_link}}" class="style-1">{{homestay_detail.google_rating}} <span class="fa fa-star checked"></span></a>
-
-    </div>
-    <div id="middle">
-      <p>hi</p>
-
-    </div>
-    <div id="right">
-      <a href="{{homestay_detail.google_map_link}}" class="style-1">Book Now</a>
+ </div>
 
 
 
 
-    </div>
+ </div>
+
+
+
 
 </div>
 
-</div>
+
 
 
 
 <style media="screen">
-.cont{
 
-  margin-top:80px;
-  padding:20px;
-
-
+.three{
+  height:100%;
 }
+
+
 .box{
   margin:40px;
-  margin-top: 80px;
+  font-size:22px;
+  padding:10px;
+  margin-bottom:20vw;
   border-radius: 10px;
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  font-family: 'Itim',cursive;
 }
 .cards-list {
 z-index: 0;
@@ -123,79 +170,50 @@ box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
 -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
 
-.title-white {
-color: white;
-}
-
-.title-black {
-color: black;
-}
-
-@media all and (max-width: 500px) {
-.card-list {
-/* On small screens, we are no longer using row direction but column */
-flex-direction: column;
-}
-}
-
-.loop{
-width:100%;
-
-}
-#left{
-float:left;
-border-radius: 10px;
-transition: 0.4s;
-width:33%;
-}
-#left:hover {
-transform: scale(0.9, 0.9);
-box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
--5px -5px 30px 15px rgba(0,0,0,0.22);
-}
-#middle{
-  float:left;
-  width:33%;
-}
-#right{
-float:right;
-width:34%;
-}
 .style-1 {
-border:3px solid white;
-color:white;
+  border:3px solid white;
+  color:white;
 
-text-transform:uppercase;
-padding:10px;
-font-weight:600;
-max-width:250px;
-display:block;
-text-align:center;
-margin:10px auto;
-position:relative;
+  text-transform:uppercase;
+  padding:10px;
+  font-weight:600;
+  max-width:250px;
+  display:block;
+  text-align:center;
+  margin:10px auto;
+  position:relative;
 }
 .style-1:hover {
-background:#000;
-border-color:white;
-color:#fff;
+  background:#000;
+  border-color:white;
+  color:#fff;
 }
-.style-2 {
-border:3px solid white;
-color:white;
+.style-2{
+  border:0.5vw solid white;
+  color:white;
 
-text-transform:uppercase;
-padding:10px;
-font-weight:600;
-width:75%;
+  text-transform:uppercase;
+  padding:10px;
+  font-weight:300;
+  max-width:250px;
+  display:block;
+  text-align:center;
+  margin:2vw auto;
+  position:relative;
 
-text-align:center;
-margin:10px auto;
-position:relative;
 }
-.style-2:hover {
-background:#000;
-border-color:white;
-color:#fff;
+.cus{
+  width: 100%;
+}
+.alll{
+  width:100%;
+  padding:20px;
+}
+#left{
+  float:left;
+}
+#right{
+  float:right;
 }
 </style>
 

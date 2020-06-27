@@ -1,9 +1,8 @@
 {%extends 'html/base.html'%}
 {%load static%}
 
-
 {%block body_block%}
-<div class="box">
+<div class="box d-none d-md-block">
   <h1> {{hotel.name}}  {% if hotel.veg%}<img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}
   </h1>
   <div  class="card 2">
@@ -13,16 +12,16 @@
      </div>
 
   </div>
-  <h5 style="padding:20px;font-family:'Itim',cursive;">{{hotel.desc}}</h5>
+  <h5 style="font-family: 'Itim',cursive;">{{hotel.desc}}</h5>
   <div class="side">
     <div style="padding:20px;margin:20px;margin-bottom:20vw;" id="map">
-      <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
-  <iframe style="align:center;margin:40px;" src="{{hotel.google_map_html}}" width="100%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <div style="width:100%;height:350px;text-align:center;" class="d-md-none d-sm-block  mb-3">
+  <iframe style="align:center;margin:5vw;" src="{{hotel.google_map_html}}" width="90%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
   <a style="text-align:center;" href="{{hotel.google_map_link}}" class="style-1">Go to Google Map</a>
   </div>
   <div style="width:100%;height:450px;text-align:center;" class="d-none d-md-block cus  mb-3">
   <div  class="container">
-    <iframe class="container" src="{{hotel.google_map_html}}" width="900" height="600vw" frameborder="0" style="align:center;padding-left:5vw;;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <iframe class="container" src="{{hotel.google_map_html}}" width="85%" height="600vw" frameborder="0" style="align:center;padding-left:5vw;;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     <a href="{{hotel.google_link}}" class="style-1">Go to Google Map</a>
 
   </div>
@@ -43,17 +42,54 @@
 
     </div>
     <div id="right">
-      <h4>{% if hotel.veg%}<img  style="width:4vw;height:4vw;text-align:right;font-size:36px;" src="{%static 'icons/veg.jpg'%}" alt="">Pure Vegetarian{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}</h4>
+      <h4>{% if hotel.veg%}<img  style="width:4vw;height:4vw;text-align:right;font-size:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">Pure Vegetarian{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}</h4>
 
 
 
     </div>
 
+ </div>
 </div>
+<div style="padding:1vw;padding-top:10vw;" class="d-md-none d-sm-block">
+  <div class="heading">
+    <h1 style="font-size:7vw">{{hotel.name}}  {% if hotel.veg%}<img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}
+      <div style="width:90vw"  class="card 2">
+        <div class="card_image">
+          <img style="width:90vw;" src="{{hotel.thumbnail.url}}" alt="">
+
+         </div>
+
+      </div>
+      <h5 style="padding:20px;font-family: 'Itim',cursive;text-align:left">{{hotel.desc}}</h5>
+
+
+  </div>
+  <div style="text-align:center;padding:3vw"  class="container">
+    <h4>Check it on Google maps</h4>
+    <iframe class="con" src="{{hotel.google_map_html}}" width="80%" height="250vw" frameborder="0" style="align:center;padding-left:5vw;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <a href="{{hotel.google_map_link}}" class="style-1">Go to Google Map</a>
+    </div>
+
+    <div style="padding-bottom:18vw;margin:left:20px;" class="loop">
+      <div id="left">
+
+    <a href="{{hotel.google_link}}" class="style-1">{{hotel.google_rating}} <span class="fa fa-star checked"></span></a>
+
+      </div>
+      <div id="right">
+        <h4 style="font-size:4vw">{% if hotel.veg%}<img  style="width:4vw;height:4vw;text-align:right;font-size:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">Pure Vegetarian{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}</h4>
+
+
+
+      </div>
+
+   </div>
+
 </div>
 <style media="screen">
 .box{
   margin:40px;
+  margin-bottom: 30vw;
   padding:10px;
   margin-bottom:20vw;
   border-radius: 10px;

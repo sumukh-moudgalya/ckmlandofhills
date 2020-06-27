@@ -8,6 +8,9 @@ app_name='basicapp'
 class Baseview(TemplateView):
     template_name='html/basicapp/home_page.html'
 
+class ContactView(TemplateView):
+    template_name='basicapp/contact.html'
+
 class ExploresListView(ListView):
     model=Explores
     def get_queryset(self):

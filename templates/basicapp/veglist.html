@@ -1,63 +1,113 @@
 {%extends 'html/base.html'%}
 {%load static%}
 
+{% block body_block%}
+<div style="text-align:center" class="box d-none d-md-block">
+  <h1 style="padding:6vw;text-align:center;">Chikmagaluru offers unique variety of hotels ranging from sophisticated cafes to traditional south indian hotels</h1>
 
-{%block body_block%}
-<h1 style="padding:6vw;text-align:center;">Chikmagaluru offers unique variety of hotesl ranging from sophisticated cafes to traditional south indian hotels</h1>
-<div style="padding-bottom:18vw;" class="loopo">
-  <div id="leftie">
+  <h4>Here are the pure</h4>
+  <div style="padding-bottom:5vw;" class="loopo">
+    <div id="leftie">
 
-<a style="border-radius:50%;" href="{%url 'basicapp:hotels_list_view'%}" class="style-1">All</a>
+  <a style="border-radius:50%;color:white;padding:10px;margin:10px;" href="{%url 'basicapp:hotels_list_view'%}" class="style-1">All</a>
+
+    </div>
+    <div id="rightie">
+
+     <a style="border-radius:50%;background-color:white;color:black;" href="{%url 'basicapp:veg_list'%}" class="style-1">Pure Veg </a>
+
+
+    </div>
+
 
   </div>
-  <div id="rightie">
-
-   <a style="border-radius:50%;background-color:white;color:black;" href="{%url 'basicapp:veg_list'%}" class="style-1">Pure Veg <img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt=""></a>
-
-
-  </div>
-
-
 </div>
-<h1 style="padding:6vw;text-align:center;">Chikmagaluru offers unique variety of hotesl ranging from sophisticated cafes to traditional south indian hotels</h1>
+<div class="d-md-none d-sm-block small">
+  <h1 style="padding-top:12vw;text-align:center;font-size:7vw;">Chikmagaluru offers unique variety of hotels ranging from sophisticated cafes to traditional south indian hotels</h1>
+  <div style="padding-bottom:18vw;" class="loopo">
+    <div id="leftie">
+
+  <a style="border-radius:50%;color:white;padding:10px;margin:10px;" href="{%url 'basicapp:hotels_list_view'%}" class="style-1">All</a>
+
+    </div>
+    <div id="rightie">
+
+     <a style="border-radius:50%;background-color:white;color:black;" href="{%url 'basicapp:veg_list'%}" class="style-1">Pure Veg </a>
+
+
+    </div>
+
+
+  </div>
+</div>
+
+
 {% for hotel in veglist%}
-{% if hotel.veg%}
-<div class="box">
-  <h1> {{hotel.name}}  <img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt=""></h1>
-  <div  class="card 2">
-    <div class="card_image">
-      <img style="width:60vw;height:40vw;" src="{{hotel.thumbnail.url}}" alt="">
+{%if hotel.veg%}
+<div class="box d-none d-md-block">
+  <div class="">
+    <h1>{{hotel.rank}} : {{hotel.name}}  {% if hotel.veg%}<img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}
+  </h1>
+    <div  class="card 2">
+      <div class="card_image">
+        <img style="width:60vw;height:40vw;" src="{{hotel.thumbnail.url}}" alt="">
 
-     </div>
-
-  </div>
-  <h5 style="padding:20px;font-family:'Itim',cursive;">{{hotel.desc}}</h5>
-
-  <div style="padding-bottom:18vw;" class="loop">
-    <div id="left">
-
-  <a href="{{hotel.google_link}}" class="style-1">{{hotel.google_rating}} <span class="fa fa-star checked"></span></a>
+       </div>
 
     </div>
-    <div id="right">
-     <a href="{{hotel.id}}" class="style-1">Read More</a>
+    <h5 style="padding:20px;font-family: 'Itim',cursive;">{{hotel.desc}}</h5>
+
+    <div style="padding-bottom:18vw;" class="loop">
+      <div id="left">
+
+    <a href="{{hotel.google_link}}" class="style-1">{{hotel.google_rating}} <span class="fa fa-star checked"></span></a>
+
+      </div>
+      <div id="right">
+       <a href="{{hotel.id}}" class="style-1">Read More</a>
+
+
+      </div>
 
 
     </div>
 
 
+
+
+
+
   </div>
-
-
 
 </div>
-{%else%}
+<div style="padding:1vw;" class="d-md-none d-sm-block small">
+  <h1 style="font-size:7vw">{{hotel.rank}} : {{hotel.name}}  {% if hotel.veg%}<img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}
+    <div style="width:90vw"  class="card 2">
+      <div class="card_image">
+        <img style="width:90vw;" src="{{hotel.thumbnail.url}}" alt="">
+
+       </div>
+
+    </div>
+    <h5 style="padding:20px;font-family: 'Itim',cursive;text-align:left">{{hotel.desc}}</h5>
+    <div style="padding-bottom:18vw;" class="loop">
+      <div id="left">
+
+    <a href="{{hotel.google_link}}" class="style-1">{{hotel.google_rating}} <span class="fa fa-star checked"></span></a>
+
+      </div>
+      <div id="right">
+       <a href="{{hotel.id}}" class="style-1">Read More</a>
+
+
+      </div>
+
+
+    </div>
+</div>
 
 {%endif%}
-
-
 {%endfor%}
-
 
 
 

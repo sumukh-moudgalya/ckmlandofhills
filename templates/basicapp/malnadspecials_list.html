@@ -2,9 +2,12 @@
 {%load static%}
 
 {% block body_block%}
-
-<div class="box">
   {%for special in malnadspecials%}
+
+
+<div class="box d-none d-md-block">
+  <h1 style="padding:20px;margin:20px;">Chikkmagaluru is known for its unique and mouth watering dishes, customs and practices.This page helps you find it</h1>
+
   <h1>{{special.rank}} : {{special.name}}</h1>
   <div  class="card 2">
     <div class="card_image">
@@ -22,8 +25,8 @@
 </div>
 <div style="width:100%;height:450px;text-align:center;" class="d-none d-md-block cus  mb-3">
 <div  class="container">
-  <iframe class="container" src="{{special.google_map_html}}" width="900" height="600vw" frameborder="0" style="align:center;padding-left:5vw;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-  <a href="{{special.google_map_link}}" class="style-1">Go to Google Map</a>
+  <iframe class="container" src="{{special.google_map_html}}" width="900vw" height="600vw" frameborder="0" style="align:center;padding-left:5vw;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <a style="text-align:center;"href="{{special.google_map_link}}" class="style-1">Go to Google Map</a>
 
 </div>
 
@@ -37,11 +40,11 @@
   <div class="alll">
 
     <div id="leftie">
-      <a href="#" class="style-1">COntact Us for booking</a>
+      <a style="text-align:center" href="#" class="style-1">Book Now</a>
     </div>
 
     <div id="rightie">
-      <a href="{% url 'basicapp:home_view'%}" class="style-1"> Go to home page</a>
+      <a  style="text-align:center;"href="{% url 'basicapp:home_view'%}" class="style-1">Home page</a>
 
     </div>
 
@@ -49,8 +52,39 @@
 
 
 
-{%endfor%}
+
 </div>
+<div style="padding-top:10vw;" class="d-md-none d-sm-block small">
+  <h1 style="font-size:7vw;padding:1vw;text-align:center">Chikkmagaluru is known for its unique and mouth watering dishes, customs and practices.This page helps you find it</h1>
+    <h1 style="font-size:6vw;padding-top:5vw;">{{special.rank}} : {{special.name}}</h1>
+    <div style="width:90vw"  class="card 2">
+      <div class="card_image">
+        <img style="width:90vw;" src="{{special.thumbnail.url}}" alt="">
+
+       </div>
+
+    </div>
+      <h5 style="padding:2vw;">{{special.desc}}</h5>
+
+      <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
+  <iframe style="align:center;margin:40px;" src="{{special.google_map_html}}" width="80%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <a style="text-align:center;" href="{{special.google_map_link}}" class="style-1">Go to Google Map</a>
+  </div>
+
+  <div class="alll">
+
+    <div id="leftie">
+      <a style="text-align:center" href="#" class="style-1">Book Now</a>
+    </div>
+
+    <div id="rightie">
+      <a  style="text-align:center;"href="{% url 'basicapp:home_view'%}" class="style-1">Home page</a>
+
+    </div>
+
+  </div>
+</div>
+{%endfor%}
 
 
 
@@ -68,7 +102,7 @@
 }
 
 .box{
-  margin:80px;
+  margin:40px;
   border-radius: 10px;
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   padding:40px;
@@ -137,6 +171,7 @@ flex-direction: column;
 }
 .loop{
   width:100%;
+  display: flex;
 
 }
 #left{

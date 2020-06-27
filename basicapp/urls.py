@@ -17,4 +17,5 @@ urlpatterns=[
     url(r'malnadspecials/&',views.MalnadSpecialsListView.as_view(),name='specials_list'),
     url(r'veglist/$',views.HotelVegList.as_view(),name='veg_list'),
     url(r'veglist/(?P<pk>[-\w]+)$',views.HotelVegDetailView.as_view(),name='detail_view'),
+    url(r'contact/$',views.ContactView.as_view(),name='contact_view'),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

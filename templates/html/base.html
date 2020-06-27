@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- google font link -->
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Chewy&family=Courgette&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Itim&display=swap" rel="stylesheet">
 
 <!-- custom link -->
@@ -20,9 +24,35 @@
   </head>
   <body>
     <!-- Load Facebook SDK for JavaScript -->
-        
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: transparent!important;">
-      <a style="color:white;" class="navbar-brand bigbrand" href="{%url 'basicapp:home_view'%}">CKM</a>
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              xfbml            : true,
+              version          : 'v7.0'
+            });
+          };
+
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!-- Your Chat Plugin code -->
+        <div class="fb-customerchat"
+          attribution=setup_tool
+          page_id="1715100815408004"
+    theme_color="#2e2e2d"
+    logged_in_greeting="Hi,we offer booking services.Contact us."
+    logged_out_greeting="Hi,we offer booking services.Contact us.">
+        </div>
+
+<div class="d-none d-md-block   ">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: transparent!important;">
+      <a style="color:white;font-size:30px;" class="navbar-brand bigbrand" href="{%url 'basicapp:home_view'%}">CKM</a>
       <button style="border-color:white;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -43,57 +73,141 @@
 
             </ul>
 
-          <a href="#" style="color:white;">Contact Us</a>
+          <a href="{%url 'basicapp:contact_view'%}" style="color:white;">Contact Us</a>
           </div>
 </nav>
+</div>
+<div class="d-md-none d-sm-block  ">
+  <nav style="font-size:1.8vw;" class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: transparent!important;">
+        <a style="color:white;" class="navbar-brand bigbrand" href="{%url 'basicapp:home_view'%}">CKM</a>
+        <a style="margin-left:;color:white;" class="nav-link" href="{% url 'basicapp:explores_list_view'%}">Explore places</a>
+        <a style="margin-left:;color:white;" class="nav-link" href="{% url 'basicapp:hotels_list_view'%}">Hotels and Cafe</a>
+        <a style="margin-left:;color:white;" class="nav-link" href="{%url 'basicapp:homestays_list'%}">Homestays</a>
+          <a style="color:white;" class="nav-link" href="{%url 'basicapp:specials_list'%}">Malnad Specials</a>
+
+
+  </nav>
+
+</div>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=0.85">
     {%block body_block%}
 
     {%endblock%}
+    <div class="res">
+      <div style="box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(255,255,255,0.22);" class="d-none d-md-block cus  mb-3">
+        <div  class="footer">
+          <div style="    border-radius: 10px;
+            " class="footer-content">
+            <div style="padding-top:20px;padding-left:20px;" id="left1">
+              <p>About</p>
+              <p>The main aim of our page is to help you discover the beauty of nature in chikmagalur.Help you have a hassle free trip by organising your trips.Make the world see the beauty of malnad culture </p>
+            </div>
+            <div style="padding-top:20px;" id="left2">
+              <p><a href="https://m.me/Chikkamagalure"<i class="fa fa-facebook" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Like us on facebook</p>
+              <p ><a href="https://www.instagram.com/chikamagalur_theland_of_hills/?igshid=1d9eqz8jdliq4"<i class="fa fa-instagram" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Follow us on Instagam</p>
+              <p><a href="https://www.youtube.com/channel/UChefcw3OEZqNxxLcaUzu73Q"<i class="fa fa-youtube" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Subscribe our channel on Youtube</p>
+              <p><a href="https://twitter.com/Chikkamagaluru1?s=09"<i class="fa fa-twitter" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Follow us on twitter</p>
 
-    <div  class="footer">
-      <div style="    border-radius: 10px;
-        box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(255,255,255,0.22);" class="footer-content">
-        <div style="padding-top:20px;padding-left:20px;" id="left1">
-          <p>About</p>
-          <p>The main aim of our page is to help you discover the beauty of nature in chikmagalur.Help you have a hassle free trip by organising your trips.Make the world see the beauty of malnad culture </p>
+            </div>
+            <div id="right">
+              <h4>Contact Us</h4>
+              <a href="https://api.whatsapp.com/send?phone=+91-8277062747" style="padding-left:;color:white;font-size:16px;"><i class="fa fa-phone" style="font-size:36px;color:white;padding-right:10px;"></i> +91-8277062747</a>
+            <p> </p>
+              <a href="https://api.whatsapp.com/send?phone=+91-6362755594" style="padding-left:%;color:white"><i class="fa fa-phone" style="font-size:36px;color:white;padding-right:10px;"></i> +91-6362755594</a>
+
+              <h4>Mail us :</h4>
+              <p style="font-size:18px;"><a href="https://mail.google.com/"<i class="fa fa-envelope" style="font-size:15px;color:white;padding:0px;margin:0px;width:30px;height:25px;padding-right:10px;"></i></a>chikkamagaluruthelandofhills@gmail.com</p>
+
+
+
+            </div>
+
+
+
+
+          </div>
+
+
         </div>
-        <div style="padding-top:20px;" id="left2">
-          <p><a href="https://m.me/Chikkamagalure"<i class="fa fa-facebook" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Like us on facebook</p>
-          <p ><a href="https://www.instagram.com/chikamagalur_theland_of_hills/?igshid=1d9eqz8jdliq4"<i class="fa fa-instagram" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Follow us on Instagam</p>
-          <p><a href="https://www.youtube.com/channel/UChefcw3OEZqNxxLcaUzu73Q"<i class="fa fa-youtube" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Subscribe our channel on Youtube</p>
-          <p><a href="https://twitter.com/Chikkamagaluru1?s=09"<i class="fa fa-twitter" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Follow us on twitter</p>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+
+        <div class="d-none d-md-block">
+          <p style="font-size:15px;"><p style="padding-left:40%;padding-right:40%;text-align:center;font-size:15px;" >< > with<i style="font-size:24px;" class="fa fa-heart "></i>by Ckm and team</p></p>
 
         </div>
-        <div id="right">
+
+      </div>
+      <div style="padding-top:20vw;" class="d-md-none d-sm-block  mb-3 footer_mob">
+        <div id="left_mob">
+          <a style="color:white" href="{%url 'basicapp:contact_view'%}">About</a>
+
+        </div>
+        <div id="middle_mob">
+          <a style="color:white" href="{%url 'basicapp:contact_view'%}">Social Media platforms</a>
+
+        </div>
+        <div id="right_mob">
+
+
+        </div>
+        <a style="padding-top:15vw;color:white;" href="{%url 'basicapp:contact_view'%}">Contact Us</a>
+        <div class="bottom">
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p>   </p>
+        <p style="text-align:center;font-size:4vw;margin-bottom:1vw;padding:2vw;" >< > with<i style="font-size:4vw;" class="fa fa-heart "></i>by Ckm and team</p>
 
 
 
         </div>
-        <h4>Contact Us</h4>
-        <p><i class="fa fa-phone" style="font-size:36px;color:white;padding-right:10px;"></i> +91-8277062747</p>
-        <p><i class="fa fa-phone" style="font-size:36px;color:white;padding-right:10px;"></i> +91-6362755594</p>
-        <h4>Mail us :</h4>
-        <p style="font-size:18px;"><a href="https://mail.google.com/"<i class="fa fa-envelope" style="font-size:15px;color:white;padding:0px;margin:0px;width:30px;height:25px;padding-right:10px;"></i></a>chikkamagaluruthelandofhills@gmail.com</p>
-
-
 
 
       </div>
 
-
     </div>
-    <p> </p>
-    <p> </p>
-    <p> </p>
-    <p style="font-size:22px;"><p style="padding-left:40%;padding-right:40%;text-align:center;font-size:24px;" >< > with<i style="font-size:24px;" class="fa fa-heart "></i>by Ckm and team</p></p>
 
-    <!-- Load Facebook SDK for JavaScript -->
+
+
 
 
 
 
 
     <style media="screen">
+    .footer_mob{
+      font-family: 'Itim', cursive;
+        width:100%;
+
+
+    }
+    #left_mob{
+      width:28%;
+      padding:3vw;
+      padding-right:4vw;
+      padding-top: 0vw;
+      margin: 3vw;
+      margin-top: 0vw;
+      float:left;
+    }
+    #middle_mob{
+      width: 36%;
+      padding: 3vw;
+      float: left;
+      padding-top: 0vw;
+    }
+    #right_mob{
+      width:36%;
+      padding:0vw;
+      float:right;
+    }
+
+
     @font-face {
     font-family: gloss_and_bloom;
     src:url("{%static 'fonts/Gloss_And_Bloom.ttf'%}");
@@ -102,7 +216,7 @@
 
       body{
         background-image: linear-gradient(to right,#181818,rgb(20,20,20));
-      font-family: 'Dancing Script', cursive;
+    font-family: 'Balsamiq Sans', cursive;
       font-size: 20px;
         color:white;
       }
@@ -138,6 +252,13 @@
     </style>
 
 
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   </body>
 </html>

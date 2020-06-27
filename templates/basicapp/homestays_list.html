@@ -3,61 +3,93 @@
 
 
 {%block body_block%}
-<div class="cont">
-  <h1 style="font-family: 'Dancing Script', cursive;">The authenticity and the beauty of nature can only be discovered by staying in the homestays of Chikkamagaluru</h1>
 
-  <div class="box">
+
+
 
     {%for homestay in homestays%}
-    <h1 style="font-size:6vw;padding:20px;">{{homestay.rank}} :{{homestay.name}}</h1>
-    <div  class="card 2">
-      <div class="card_image">
-        <img style="width:80vw;" src="{{homestay.thumbnail.url}}" alt="">
+<div class="box d-none d-md-block">
+  <h1 style="font-family: , cursive;margin-top:9vw;padding:2vw;text-align:center;">The authenticity and the beauty of nature can only be discovered by staying in the homestays of Chikkamagaluru</h1>
 
-       </div>
+  <div class="">
+      <h1 style="font-size:6vw;padding:3vw;">{{homestay.rank}} :{{homestay.name}}</h1>
+      <div  class="card 2">
+        <div class="card_image">
+          <img style="width:80vw;" src="{{homestay.thumbnail.url}}" alt="">
+
+         </div>
+
+      </div>
+
+      <h4 style="padding:3vw;">{{homestay.desc}}</h4>
+      <div style="padding-bottom:18vw;" class="loop">
+        <div id="left">
+
+        <a href="{homestay.google_map_link}}"><img style="width:9vw;height:9vw;"   src="{%static 'icons/google__map_icon.png'%}" alt="not found"></a>
+
+
+        </div>
+        <div id="right">
+         <a style="font-family:'Dancing Script', cursive;font-size:1vw;" href="{{homestay.id}}" class="style-1">Read More</a>
+
+        </div>
+
+
+      </div>
+
 
     </div>
 
-    <h4 style="padding:20px;">{{homestay.desc}}</h4>
-    <div style="padding-bottom:18vw;" class="loop">
-      <div id="left">
+</div>
+<div class="d-md-none d-sm-block small">
+  <div class="heading">
+    <h1 style="font-family: 'Dancing Scrip', cursive;font-size: 7vw;margin-top:9vw;padding:2vw;text-align:center;">The authenticity and the beauty of nature can only be discovered by staying in the homestays of Chikkamagaluru</h1>
 
-      <a href="{homestay.google_map_link}}"><img style="width:8vw;height:8vw;"   src="{%static 'icons/google__map_icon.png'%}" alt="not found"></a>
+      <h1 style="font-size:6vw;padding:3vw;">{{homestay.rank}} :{{homestay.name}}</h1>
+
+  </div>
+  <div style="width:90vw"  class="card 2">
+    <div class="card_image">
+      <img style="width:90vw;" src="{{homestay.thumbnail.url}}" alt="">
+
+     </div>
+
+  </div>
+
+  <div class="desrip">
+      <h4 style="padding:3vw;text-align:left;font-size:5vw">{{homestay.desc}}</h4>
+  </div>
+  <div style="padding-bottom:18vw;" class="loop">
+    <div id="left">
+
+    <a href="{homestay.google_map_link}}"><img style="width:13vw;height:13vw;padding-top:1vw;margin-top:1vw;"   src="{%static 'icons/google__map_icon.png'%}" alt="not found"></a>
 
 
-      </div>
-      <div id="right">
-       <a style="font-family:'Dancing Script', cursive;" href="{{homestay.id}}" class="style-1">Read More</a>
-
-      </div>
-
+    </div>
+    <div id="right">
+     <a style="font-family:'Dancing Script', cursive;font-size:3vw;" href="{{homestay.id}}" class="style-1">Read More</a>
 
     </div>
 
 
   </div>
-  {%endfor%}
+
 
 </div>
 
 
-
-
-
-
+  {%endfor%}
 <style media="screen">
-  .cont{
 
-    margin-top:80px;
-    padding:20px;
+.small{
+  text-align: center;
+  padding:2vw;
+}
 
-
-  }
   .box{
-    margin:40px;
-    margin-top: 80px;
+    margin:3vw;
     border-radius: 10px;
-    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.12);
     font-family: 'Itim',cursive;
   }
   .cards-list {
@@ -69,11 +101,11 @@ flex-wrap: wrap;
 }
 
 .card {
-margin: 30px auto;
+margin: 9vw auto;
 width: 80vw;
 height: inherit;
-border-radius: 10px;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+border-radius: 3vw;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.15), -5px -5px 30px 7px rgba(0,0,0,0.12);
 cursor: pointer;
 background-color: black;
 transition: 0.4s;
@@ -141,16 +173,16 @@ box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
   float:right;
 }
 .style-1 {
-  border:3px solid white;
+  border:2px solid white;
   color:white;
 
   text-transform:uppercase;
-  padding:10px;
-  font-weight:600;
-  max-width:250px;
+  padding:1vw;
+  font-weight:400;
+  max-width:20vw;
   display:block;
   text-align:center;
-  margin:10px auto;
+  margin:1vw auto;
   position:relative;
 }
 .style-1:hover {

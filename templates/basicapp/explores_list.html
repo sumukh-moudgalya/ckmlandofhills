@@ -2,9 +2,10 @@
 {%load static%}
 
 {%block body_block%}
-<h1 style="text-align:center;padding-top:6vw;">The places you can explore in chikmagalur</h1>
+
+<h1 style="text-align:center;padding-top:9vw;">The places you can explore in chikmagalur</h1>
 {% for place in explores_list%}
-<div class="box">
+<div class="box d-none d-md-block">
   <h1>{{place.rank}}: {{place.name}}</h1>
   <div  class="card 2">
     <div class="card_image">
@@ -14,13 +15,14 @@
 
   </div>
 
+
   <h5 style="  font-family: 'Itim',cursive;">{{place.short_desc}}</h5>
 
   <h4 style="padding-top:20px;">Distance:</h4>
   <h5>Distance from Bangalore:{{place.dist_from_bang}}</h5>
   <h5>Distance from Mysore:{{place.dist_from_mys}}</h5>
   <h5>Distance from chikmagalur:{{place.dist_from_ckm}}</h5>
-<div style="padding-bottom:18vw;" class="loop">
+  <div style="padding-bottom:18vw;" class="loop">
   <div id="left">
 
   <a href="{{place.google_map_link}}"><img style="width:8vw;height:8vw;"   src="{%static 'icons/google__map_icon.png'%}" alt="not found"></a>
@@ -28,14 +30,52 @@
 
   </div>
   <div id="right">
-   <a style="font-family:'Dancing Script', cursive;" href="{{place.id}}" class="style-1">Read More</a>
+   <a style="font-family:'Dancing Script', cursive;font-size:1vw;" href="{{place.id}}" class="style-1">Read More</a>
+
+  </div>
+
+
+
+
+  </div>
+</div>
+<div class="d-md-none d-sm-block small">
+  <h1 style="padding-top:4vw;">{{place.rank}} : {{place.name}}</h1>
+  <div style="width:90vw"  class="card 2">
+    <div class="card_image">
+      <img style="width:90vw;" src="{{place.thumbnail.url}}" alt="">
+
+     </div>
+
+  </div>
+  <div style="text-align:left" class="decrip">
+    <h5 style="  font-family: 'Itim',cursive;">{{place.short_desc}}</h5>
+
+    <h4 style="padding-top:20px;font-family: 'Itim',cursive;text-align:left">Distance:</h4>
+    <h5 style="font-family: 'Itim',cursive;">Distance from Bangalore:{{place.dist_from_bang}}</h5>
+    <h5 style="font-family: 'Itim',cursive;">Distance from Mysore:{{place.dist_from_mys}}</h5>
+    <h5 style="font-family: 'Itim',cursive;">Distance from chikmagalur:{{place.dist_from_ckm}}</h5>
+
+  </div>
+  <div style="padding-bottom:18vw;" class="loop">
+  <div id="left">
+
+  <a href="{{place.google_map_link}}"><img style="width:14vw;height:14vw;padding:1vw;"   src="{%static 'icons/google__map_icon.png'%}" alt="not found"></a>
+
+
+  </div>
+  <div id="right">
+   <a style="font-family:'Dancing Script', cursive;font-size:3vw;" href="{{place.id}}" class="style-1">Read More</a>
+
+  </div>
+
+
+
 
   </div>
 
 
 </div>
-</div>
-
 
 
 
@@ -49,11 +89,15 @@
 
 
 <style media="screen">
+.small{
+  text-align: center;
+  padding:2vw;
+}
 
   .box{
-    margin:60px;
+    margin:10vw;
     border-radius: 10px;
-    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.12);
     font-family: 'Itim',cursive;
   }
   .cards-list {
@@ -65,11 +109,11 @@ flex-wrap: wrap;
 }
 
 .card {
-margin: 30px auto;
+margin: 9vw auto;
 width: 80vw;
 height: inherit;
-border-radius: 10px;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+border-radius: 3vw;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.15), -5px -5px 30px 7px rgba(0,0,0,0.12);
 cursor: pointer;
 background-color: black;
 transition: 0.4s;
@@ -137,16 +181,16 @@ box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
   float:right;
 }
 .style-1 {
-  border:3px solid white;
+  border:0.5vw solid white;
   color:white;
 
   text-transform:uppercase;
-  padding:10px;
-  font-weight:600;
-  max-width:250px;
+  padding:1vw;
+  font-weight:400;
+  max-width:20vw;
   display:block;
   text-align:center;
-  margin:10px auto;
+  margin:1vw auto;
   position:relative;
 }
 .style-1:hover {
